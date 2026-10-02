@@ -43,6 +43,7 @@
 | teste02 | `RegrasContratoTest.deveDurar60MinutosNaTosa` | Tosa dura 60 minutos. | Vermelho: revelou `bug09`, metodo de duracao estava sobrecarregado em vez de sobrescrito. |
 | teste03 | `RegrasContratoTest.deveCancelarAtendimentoAgendado` | `cancelar()` em atendimento `AGENDADO` muda status para `CANCELADO`. | Verde: a transicao permitida ja estava implementada. |
 | teste04 | `RegrasContratoTest.deveRecusarCancelamentoDeAtendimentoConcluido` | `cancelar()` deve recusar atendimento ja `CONCLUIDO`. | Vermelho: revelou `bug10`, cancelamento mudava qualquer status para `CANCELADO`. |
+| teste05 | `RegrasContratoTest.deveRecusarAgendamentoNoPassadoSemConsultarBanco` | Data/hora no passado deve ser recusada antes de consultar o banco. | Vermelho: revelou `bug11`, o service consultava o repository antes da validacao. |
 
 ## Parte 4 - Perguntas de reflexao
 

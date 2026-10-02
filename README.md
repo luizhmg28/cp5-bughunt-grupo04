@@ -40,6 +40,7 @@
 |---|---|---|---|
 | teste01 | `RegrasContratoTest.deveCalcularPrecoDoBanhoPorPorte` | Banho custa 60, 80 e 100 reais para porte pequeno, medio e grande. | Vermelho: revelou `bug08`, precos de pequeno e grande estavam invertidos. |
 | teste02 | `RegrasContratoTest.deveDurar60MinutosNaTosa` | Tosa dura 60 minutos. | Vermelho: revelou `bug09`, metodo de duracao estava sobrecarregado em vez de sobrescrito. |
+| teste03 | `RegrasContratoTest.deveCancelarAtendimentoAgendado` | `cancelar()` em atendimento `AGENDADO` muda status para `CANCELADO`. | Verde: a transicao permitida ja estava implementada. |
 
 ## Parte 4 - Perguntas de reflexao
 

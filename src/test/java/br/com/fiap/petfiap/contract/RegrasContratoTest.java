@@ -23,4 +23,13 @@ public class RegrasContratoTest {
     public void deveDurar60MinutosNaTosa() {
         assertEquals(60, new Tosa(4, "Rex", "PEQUENO", "Ana", DATA).getDuracaoMinutos());
     }
+
+    @Test
+    public void deveCancelarAtendimentoAgendado() {
+        Banho banho = new Banho(5, "Rex", "PEQUENO", "Ana", DATA);
+
+        banho.cancelar();
+
+        assertEquals("CANCELADO", banho.getStatus());
+    }
 }

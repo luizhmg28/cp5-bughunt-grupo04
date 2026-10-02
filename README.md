@@ -36,6 +36,7 @@
 
 | # | Teste escrito (classe.metodo) | Regra coberta | Resultado ao escrever (vermelho/verde) |
 |---|---|---|---|
+| teste01 | `RegrasContratoTest.deveCalcularPrecoDoBanhoPorPorte` | Banho custa 60, 80 e 100 reais para porte pequeno, medio e grande. | Vermelho: revelou `bug08`, precos de pequeno e grande estavam invertidos. |
 
 ## Parte 4 - Perguntas de reflexao
 

@@ -23,6 +23,7 @@
 | bug02 | O Builder aceitava atendimento sem nome do pet ou sem porte. | `AtendimentoBuilder.construir`: nao validava campos obrigatorios antes de chamar a factory. | Adicionei validacao de nome e porte, recusando valores nulos ou em branco. | Builder e invariantes de objeto valido. |
 | bug03 | Criar atendimento com tipo `TOSA` retornava objeto da classe `Banho`. | `AtendimentoFactory.criar`: o `case "TOSA"` chamava `new Banho(...)`. | Troquei o caso para `new Tosa(...)`. | Factory Method e polimorfismo. |
 | bug04 | A consulta criada pela factory nao carregava nome, porte nem tutor. | `ConsultaVeterinaria` chamava `super()` no construtor completo e descartava os parametros recebidos. | Chamei o construtor completo de `Atendimento` com protocolo, pet, porte, tutor e data. | Heranca e construtores. |
+| bug05 | Duas chamadas de `GeradorProtocolo.getInstancia()` retornavam objetos diferentes e reiniciavam a numeracao. | `GeradorProtocolo.getInstancia`: criava `new GeradorProtocolo()` sem armazenar em `instancia`. | Guardei o objeto criado no campo estatico antes de retorna-lo. | Singleton e estado global sequencial. |
 
 ## Parte 2 - Ajustes de Clean Code
 

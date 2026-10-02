@@ -1,5 +1,6 @@
 package br.com.fiap.petfiap.contract;
 
+import br.com.fiap.petfiap.exception.StatusInvalidoException;
 import br.com.fiap.petfiap.model.Banho;
 import br.com.fiap.petfiap.model.Tosa;
 import org.junit.jupiter.api.Test;
@@ -7,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class RegrasContratoTest {
 
@@ -31,5 +33,13 @@ public class RegrasContratoTest {
         banho.cancelar();
 
         assertEquals("CANCELADO", banho.getStatus());
+    }
+
+    @Test
+    public void deveRecusarCancelamentoDeAtendimentoConcluido() {
+        Banho banho = new Banho(6, "Rex", "PEQUENO", "Ana", DATA);
+        banho.concluir();
+
+        assertThrows(StatusInvalidoException.class, banho::cancelar);
     }
 }

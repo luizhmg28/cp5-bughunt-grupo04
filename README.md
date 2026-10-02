@@ -2,18 +2,19 @@
 
 ## Identificacao
 
-**Grupo:** preencher
+**Grupo:** 04
 
 | Integrante | RM | Turma |
 |---|---|---|
-| preencher | preencher | preencher |
+| Gustavo Hackime Costa | 563751 | 2CCPO |
+| Luiz Henrique Macedo Graca | 564704 | 2CCPH |
 
 | Campo | |
 |---|---|
-| **Total de bugs corrigidos** | em andamento |
-| **Total de ajustes de Clean Code** | em andamento |
-| **Total de testes novos escritos** | em andamento |
-| **Suite final (Run As -> JUnit Test)** | bloqueada localmente: Maven nao esta instalado no PATH |
+| **Total de bugs corrigidos** | 12 / 12 |
+| **Total de ajustes de Clean Code** | 6 / 6 |
+| **Total de testes novos escritos** | 6 / 6 |
+| **Suite final (Run As -> JUnit Test)** | 26 testes esperados; execucao local bloqueada porque Maven nao esta instalado no PATH |
 
 ## Parte 1 - Bugs encontrados
 

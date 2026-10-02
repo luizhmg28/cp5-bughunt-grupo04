@@ -4,7 +4,6 @@ import jakarta.persistence.Entity;
 
 import java.time.LocalDateTime;
 
-// Consulta veterinaria: preco fixo (independe do porte), 50 pontos, 30 minutos.
 @Entity
 public class ConsultaVeterinaria extends Atendimento {
 

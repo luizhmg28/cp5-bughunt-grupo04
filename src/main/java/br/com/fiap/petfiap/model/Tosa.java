@@ -4,7 +4,6 @@ import jakarta.persistence.Entity;
 
 import java.time.LocalDateTime;
 
-// Tosa: preco por porte, 30 pontos, 60 minutos.
 @Entity
 public class Tosa extends Atendimento {
 

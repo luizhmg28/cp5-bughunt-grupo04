@@ -4,7 +4,6 @@ import jakarta.persistence.Entity;
 
 import java.time.LocalDateTime;
 
-// Banho: preco por porte, 20 pontos, 45 minutos.
 @Entity
 public class Banho extends Atendimento {
 

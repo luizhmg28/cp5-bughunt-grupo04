@@ -23,8 +23,6 @@ public class AtendimentoController {
     @Autowired
     private AgendaService service;
 
-    // POST /api/atendimentos?tutorNome=Ana - Agendar atendimento
-    // Ex.: POST "/api/atendimentos?tipo=BANHO&petNome=Rex&porte=PEQUENO&tutorNome=Ana&dataHora=2026-10-01T10:00"
     @PostMapping
     public ResponseEntity<Atendimento> agendar(
             @RequestParam String tipo,
@@ -48,7 +46,6 @@ public class AtendimentoController {
         }
     }
 
-    // GET /api/atendimentos/{id} - Buscar por id
     @GetMapping("/{id}")
     public ResponseEntity<Atendimento> buscarPorId(@PathVariable Long id) {
         try {
@@ -58,13 +55,11 @@ public class AtendimentoController {
         }
     }
 
-    // GET /api/atendimentos/pet/{nome} - Atendimentos de um pet
     @GetMapping("/pet/{nome}")
     public List<Atendimento> buscarPorPet(@PathVariable String nome) {
         return service.buscarPorPet(nome);
     }
 
-    // GET /api/atendimentos/{id}/resumo - Preco, pontos e duracao (polimorfismo na pratica)
     @GetMapping("/{id}/resumo")
     public ResponseEntity<Map<String, Object>> resumo(@PathVariable Long id) {
         try {
@@ -79,7 +74,6 @@ public class AtendimentoController {
         }
     }
 
-    // POST /api/atendimentos/{id}/conclusao - Concluir atendimento
     @PostMapping("/{id}/conclusao")
     public ResponseEntity<Atendimento> concluir(@PathVariable Long id) {
         try {
@@ -91,7 +85,6 @@ public class AtendimentoController {
         }
     }
 
-    // POST /api/atendimentos/{id}/cancelamento - Cancelar atendimento
     @PostMapping("/{id}/cancelamento")
     public ResponseEntity<Atendimento> cancelar(@PathVariable Long id) {
         try {

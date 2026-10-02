@@ -5,8 +5,6 @@ import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
-// Atendimento do PetFiap: banho, tosa ou consulta veterinaria.
-// As regras de preco, pontos e duracao moram nas subclasses (polimorfismo).
 @Entity
 @Table(name = "atendimentos")
 public abstract class Atendimento {
@@ -23,7 +21,6 @@ public abstract class Atendimento {
 
     private LocalDateTime dataHora;
 
-    // AGENDADO, CONCLUIDO ou CANCELADO
     private String status;
 
     protected Atendimento() {
@@ -38,21 +35,16 @@ public abstract class Atendimento {
         this.status = "AGENDADO";
     }
 
-    // tipo do atendimento (BANHO, TOSA, CONSULTA)
     public abstract String getTipo();
 
-    // preco do atendimento segundo o porte do pet
     public abstract double calcularPreco();
 
-    // pontos de fidelidade acumulados pelo tutor
     public abstract int calcularPontosFidelidade();
 
-    // duracao media em minutos; subclasses mais demoradas sobrescrevem
     public int getDuracaoMinutos() {
         return 30;
     }
 
-    // Conclui o atendimento (so pode em AGENDADO)
     public void concluir() {
         if (!"AGENDADO".equals(status)) {
             throw new StatusInvalidoException("Atendimento " + protocolo + " nao pode ser concluido: status " + status);
@@ -60,7 +52,6 @@ public abstract class Atendimento {
         status = "CONCLUIDO";
     }
 
-    // Cancela o atendimento
     public void cancelar() {
         if (!"AGENDADO".equals(status)) {
             throw new StatusInvalidoException("Atendimento " + protocolo + " nao pode ser cancelado: status " + status);
@@ -68,7 +59,6 @@ public abstract class Atendimento {
         status = "CANCELADO";
     }
 
-    // Getters e Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

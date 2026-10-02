@@ -41,6 +41,7 @@
 | clean03 | `GeradorProtocolo` | `System.out.println` no construtor gerava efeito colateral e ruido em teste/execucao. | Removi a impressao do construtor. |
 | clean04 | `AgendaService.agendar` | Impressao de recibo no service misturava regra de negocio com saida de console. | Retornei diretamente o resultado de `repository.save(novo)`. |
 | clean05 | `AtendimentoController` | Metodo privado morto e comentario de regra futura poluiam o controller. | Removi `calcularDescontoFidelidade`, que nao era chamado. |
+| clean06 | Codigo de producao em `src/main/java` | Comentarios obvios repetiam nomes de metodos, anotacoes e regras ja expressas no codigo. | Removi comentarios genericos sem alterar comportamento. |
 
 ## Parte 3 - Testes novos (regras que estavam sem cobertura)
 

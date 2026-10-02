@@ -5,8 +5,6 @@ import br.com.fiap.petfiap.model.Atendimento;
 
 import java.time.LocalDateTime;
 
-// Padrao Builder (Aula 14): monta um atendimento complexo passo a passo,
-// sem construtor gigante no controller.
 public class AtendimentoBuilder {
 
     private String tipo;
@@ -36,8 +34,6 @@ public class AtendimentoBuilder {
         return this;
     }
 
-    // A validacao dos campos obrigatorios fica por conta do controller,
-    // que conhece a regra de negocio do PetFiap.
     public Atendimento construir(int protocolo) {
         if (petNome == null || petNome.isBlank()) {
             throw new IllegalArgumentException("Nome do pet e obrigatorio");

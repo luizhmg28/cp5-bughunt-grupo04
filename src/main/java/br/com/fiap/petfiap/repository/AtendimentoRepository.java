@@ -7,6 +7,5 @@ import java.util.List;
 
 public interface AtendimentoRepository extends JpaRepository<Atendimento, Long> {
 
-    // Query derivada (Aula 13): o Spring gera o SQL a partir do nome do metodo
     List<Atendimento> findByPetNome(String petNome);
 }

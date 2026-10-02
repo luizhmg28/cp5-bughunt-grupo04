@@ -24,6 +24,7 @@
 | bug03 | Criar atendimento com tipo `TOSA` retornava objeto da classe `Banho`. | `AtendimentoFactory.criar`: o `case "TOSA"` chamava `new Banho(...)`. | Troquei o caso para `new Tosa(...)`. | Factory Method e polimorfismo. |
 | bug04 | A consulta criada pela factory nao carregava nome, porte nem tutor. | `ConsultaVeterinaria` chamava `super()` no construtor completo e descartava os parametros recebidos. | Chamei o construtor completo de `Atendimento` com protocolo, pet, porte, tutor e data. | Heranca e construtores. |
 | bug05 | Duas chamadas de `GeradorProtocolo.getInstancia()` retornavam objetos diferentes e reiniciavam a numeracao. | `GeradorProtocolo.getInstancia`: criava `new GeradorProtocolo()` sem armazenar em `instancia`. | Guardei o objeto criado no campo estatico antes de retorna-lo. | Singleton e estado global sequencial. |
+| bug06 | Agendar o mesmo pet no mesmo horario podia salvar duplicado quando a data vinha em outro objeto. | `AgendaService.agendar`: comparava `String` e `LocalDateTime` com `==`. | Troquei as comparacoes para `.equals()`. | Igualdade de objetos: referencia versus valor. |
 
 ## Parte 2 - Ajustes de Clean Code
 

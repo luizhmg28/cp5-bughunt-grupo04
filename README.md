@@ -29,6 +29,7 @@
 | bug08 | O teste de contrato do banho esperava R$ 60 para pequeno e R$ 100 para grande, mas o codigo retornava o inverso. | `Banho.calcularPreco`: valores de `PEQUENO` e `GRANDE` estavam trocados. | Ajustei `PEQUENO` para 60, `MEDIO` para 80 e o caso restante para 100. | Polimorfismo e regra de negocio no model. |
 | bug09 | A tosa durava 30 minutos quando chamada por `getDuracaoMinutos()`. | `Tosa` tinha `getDuracaoMinutos(String porte)`, criando sobrecarga em vez de sobrescrita. | Corrigi a assinatura para `getDuracaoMinutos()` e marquei com `@Override`. | Override versus overload. |
 | bug10 | Cancelar atendimento concluido mudava o status para `CANCELADO`. | `Atendimento.cancelar`: nao validava o status atual. | Passei a permitir cancelamento apenas quando o status e `AGENDADO`, lancando `StatusInvalidoException` nos demais. | Maquina de estados e excecao de dominio. |
+| bug11 | Agendar atendimento no passado consultava o repository e nao recusava com a excecao esperada. | `AgendaService.agendar`: validava conflitos antes de validar a data/hora. | Adicionei validacao inicial para data no passado, lancando `IllegalArgumentException` antes de qualquer acesso ao banco. | Ordem de validacao e fail fast. |
 
 ## Parte 2 - Ajustes de Clean Code
 

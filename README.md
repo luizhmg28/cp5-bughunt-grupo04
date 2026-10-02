@@ -36,6 +36,7 @@
 
 | # | Onde estava | Qual principio/boas praticas era violado | O que eu mudei |
 |---|---|---|---|
+| clean01 | `AtendimentoFactory.criar` | Parametros de uma letra prejudicavam leitura e manutencao. | Renomeei para `protocolo`, `tipo`, `petNome`, `petPorte`, `tutorNome` e `dataHora`. |
 
 ## Parte 3 - Testes novos (regras que estavam sem cobertura)
 

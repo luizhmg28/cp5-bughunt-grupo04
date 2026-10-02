@@ -20,6 +20,7 @@
 | # | Sintoma observado (o que fiz/vi) | Causa raiz (arquivo e linha aproximada) | Correcao aplicada | Conceito da disciplina |
 |---|---|---|---|---|
 | bug01 | Ao montar atendimento completo pelo Builder, o nome do pet chegava como `null`. | `AtendimentoBuilder.comPet`: atribuicao `petNome = petNome` alterava apenas o parametro local. | Troquei para `this.petNome = petNome`, preservando o valor informado no builder. | Builder e escopo de variaveis com `this`. |
+| bug02 | O Builder aceitava atendimento sem nome do pet ou sem porte. | `AtendimentoBuilder.construir`: nao validava campos obrigatorios antes de chamar a factory. | Adicionei validacao de nome e porte, recusando valores nulos ou em branco. | Builder e invariantes de objeto valido. |
 
 ## Parte 2 - Ajustes de Clean Code
 

@@ -26,6 +26,7 @@
 | bug05 | Duas chamadas de `GeradorProtocolo.getInstancia()` retornavam objetos diferentes e reiniciavam a numeracao. | `GeradorProtocolo.getInstancia`: criava `new GeradorProtocolo()` sem armazenar em `instancia`. | Guardei o objeto criado no campo estatico antes de retorna-lo. | Singleton e estado global sequencial. |
 | bug06 | Agendar o mesmo pet no mesmo horario podia salvar duplicado quando a data vinha em outro objeto. | `AgendaService.agendar`: comparava `String` e `LocalDateTime` com `==`. | Troquei as comparacoes para `.equals()`. | Igualdade de objetos: referencia versus valor. |
 | bug07 | Buscar id inexistente retornava `null` em vez de lancar `AtendimentoNaoEncontradoException`. | `AgendaService.buscarPorId`: `catch (Exception)` capturava a excecao de negocio e escondia a falha. | Removi o `try/catch` generico e deixei `orElseThrow` propagar a excecao correta. | Excecoes de dominio e fail fast. |
+| bug08 | O teste de contrato do banho esperava R$ 60 para pequeno e R$ 100 para grande, mas o codigo retornava o inverso. | `Banho.calcularPreco`: valores de `PEQUENO` e `GRANDE` estavam trocados. | Ajustei `PEQUENO` para 60, `MEDIO` para 80 e o caso restante para 100. | Polimorfismo e regra de negocio no model. |
 
 ## Parte 2 - Ajustes de Clean Code
 

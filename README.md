@@ -9,12 +9,12 @@
 | Gustavo Hackime Costa | 563751 | 2CCPO |
 | Luiz Henrique Macedo Graca | 564704 | 2CCPH |
 
-| Campo | |
-|---|---|
-| **Total de bugs corrigidos** | 12 / 12 |
-| **Total de ajustes de Clean Code** | 6 / 6 |
-| **Total de testes novos escritos** | 6 / 6 |
-| **Suite final (Run As -> JUnit Test)** | 26 testes, preencher falhas apos rodar no Eclipse |
+| Campo |                |
+|---|----------------|
+| **Total de bugs corrigidos** | 12 / 12        |
+| **Total de ajustes de Clean Code** | 6 / 6          |
+| **Total de testes novos escritos** | 6 / 6          |
+| **Suite final (Run As -> JUnit Test)** | 26 testes      |
 
 ## Parte 1 - Bugs encontrados
 
@@ -83,4 +83,3 @@ Vale manter tambem testes que ficaram verdes de primeira, porque eles protegem r
 
 ## Parte 5 - Espaco livre (opcional)
 
-Sem observacoes.

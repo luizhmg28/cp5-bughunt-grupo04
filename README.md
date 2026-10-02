@@ -25,6 +25,7 @@
 | bug04 | A consulta criada pela factory nao carregava nome, porte nem tutor. | `ConsultaVeterinaria` chamava `super()` no construtor completo e descartava os parametros recebidos. | Chamei o construtor completo de `Atendimento` com protocolo, pet, porte, tutor e data. | Heranca e construtores. |
 | bug05 | Duas chamadas de `GeradorProtocolo.getInstancia()` retornavam objetos diferentes e reiniciavam a numeracao. | `GeradorProtocolo.getInstancia`: criava `new GeradorProtocolo()` sem armazenar em `instancia`. | Guardei o objeto criado no campo estatico antes de retorna-lo. | Singleton e estado global sequencial. |
 | bug06 | Agendar o mesmo pet no mesmo horario podia salvar duplicado quando a data vinha em outro objeto. | `AgendaService.agendar`: comparava `String` e `LocalDateTime` com `==`. | Troquei as comparacoes para `.equals()`. | Igualdade de objetos: referencia versus valor. |
+| bug07 | Buscar id inexistente retornava `null` em vez de lancar `AtendimentoNaoEncontradoException`. | `AgendaService.buscarPorId`: `catch (Exception)` capturava a excecao de negocio e escondia a falha. | Removi o `try/catch` generico e deixei `orElseThrow` propagar a excecao correta. | Excecoes de dominio e fail fast. |
 
 ## Parte 2 - Ajustes de Clean Code
 

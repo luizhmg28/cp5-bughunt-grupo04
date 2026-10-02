@@ -38,6 +38,7 @@
 |---|---|---|---|
 | clean01 | `AtendimentoFactory.criar` | Parametros de uma letra prejudicavam leitura e manutencao. | Renomeei para `protocolo`, `tipo`, `petNome`, `petPorte`, `tutorNome` e `dataHora`. |
 | clean02 | `AgendaService.agendar` | Nome totalmente qualificado dentro da regra deixava a validacao mais ruidosa. | Importei `LocalDateTime` e usei `LocalDateTime.now()`. |
+| clean03 | `GeradorProtocolo` | `System.out.println` no construtor gerava efeito colateral e ruido em teste/execucao. | Removi a impressao do construtor. |
 
 ## Parte 3 - Testes novos (regras que estavam sem cobertura)
 

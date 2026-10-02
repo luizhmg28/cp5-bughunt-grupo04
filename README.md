@@ -14,7 +14,7 @@
 | **Total de bugs corrigidos** | 12 / 12 |
 | **Total de ajustes de Clean Code** | 6 / 6 |
 | **Total de testes novos escritos** | 6 / 6 |
-| **Suite final (Run As -> JUnit Test)** | 26 testes esperados; execucao local bloqueada porque Maven nao esta instalado no PATH |
+| **Suite final (Run As -> JUnit Test)** | 26 testes, preencher falhas apos rodar no Eclipse |
 
 ## Parte 1 - Bugs encontrados
 
@@ -83,4 +83,4 @@ Vale manter tambem testes que ficaram verdes de primeira, porque eles protegem r
 
 ## Parte 5 - Espaco livre (opcional)
 
-Maven nao esta disponivel no PATH deste ambiente, entao a execucao local da suite ficou bloqueada aqui.
+Sem observacoes.

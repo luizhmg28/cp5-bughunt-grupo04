@@ -4,6 +4,7 @@ import br.com.fiap.petfiap.exception.StatusInvalidoException;
 import br.com.fiap.petfiap.repository.AtendimentoRepository;
 import br.com.fiap.petfiap.service.AgendaService;
 import br.com.fiap.petfiap.model.Banho;
+import br.com.fiap.petfiap.model.ConsultaVeterinaria;
 import br.com.fiap.petfiap.model.Tosa;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -67,5 +68,12 @@ public class RegrasContratoTest {
         assertThrows(IllegalArgumentException.class, () -> service.agendar(banho));
         verify(repository, never()).findByPetNome(anyString());
         verify(repository, never()).save(any());
+    }
+
+    @Test
+    public void deveManterConsultaComPrecoFixoParaTodosOsPortes() {
+        assertEquals(150.0, new ConsultaVeterinaria(8, "Rex", "PEQUENO", "Ana", DATA).calcularPreco(), 0.001);
+        assertEquals(150.0, new ConsultaVeterinaria(9, "Mimi", "MEDIO", "Bruno", DATA).calcularPreco(), 0.001);
+        assertEquals(150.0, new ConsultaVeterinaria(10, "Thor", "GRANDE", "Carla", DATA).calcularPreco(), 0.001);
     }
 }

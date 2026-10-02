@@ -30,6 +30,7 @@
 | bug09 | A tosa durava 30 minutos quando chamada por `getDuracaoMinutos()`. | `Tosa` tinha `getDuracaoMinutos(String porte)`, criando sobrecarga em vez de sobrescrita. | Corrigi a assinatura para `getDuracaoMinutos()` e marquei com `@Override`. | Override versus overload. |
 | bug10 | Cancelar atendimento concluido mudava o status para `CANCELADO`. | `Atendimento.cancelar`: nao validava o status atual. | Passei a permitir cancelamento apenas quando o status e `AGENDADO`, lancando `StatusInvalidoException` nos demais. | Maquina de estados e excecao de dominio. |
 | bug11 | Agendar atendimento no passado consultava o repository e nao recusava com a excecao esperada. | `AgendaService.agendar`: validava conflitos antes de validar a data/hora. | Adicionei validacao inicial para data no passado, lancando `IllegalArgumentException` antes de qualquer acesso ao banco. | Ordem de validacao e fail fast. |
+| bug12 | No fluxo da API, salvar atendimento novo sem id podia falhar porque o identificador nao era gerado. | `Atendimento.id`: campo marcado apenas com `@Id`, sem `@GeneratedValue`. | Adicionei `@GeneratedValue(strategy = GenerationType.IDENTITY)` para o banco gerar o id. | JPA, entidades e persistencia. |
 
 ## Parte 2 - Ajustes de Clean Code
 
